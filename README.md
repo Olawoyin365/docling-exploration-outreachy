@@ -535,7 +535,7 @@ RapidOCR returned empty result
 **Root cause:**  
 Document has embedded searchable text (no image-based text to OCR)
 
-**Impact:** None—OCR layer simply had nothing to extract
+**Impact:** None OCR layer simply had nothing to extract
 
 **Why this happens:**
 - Modern PDFs embed text as selectable content
