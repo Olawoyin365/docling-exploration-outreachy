@@ -5,7 +5,7 @@
 **Program:** Outreachy Round 32 Internship (May 2026 Cohort)  
 **Project:** Develop a SLM/LLM using RamaLama RAG based off Fedora RPM Packaging Guidelines  
 **Date:** March 25, 2026  
-**Task:** [Issue #122 - Docling: explore document processing basics](https://github.com/fedora-infra/fedora-interns/issues/122)
+**Task:** [Outreachy 2026: Issue #122 - Docling: explore document processing basics](https://forge.fedoraproject.org/commops/interns/issues/122)
 
 ---
 
