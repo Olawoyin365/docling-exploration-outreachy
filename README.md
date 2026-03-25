@@ -56,12 +56,6 @@ Installed Docling using pip:
 pip install docling
 ```
 
-**Output:**
-
-![Installed successfully](screenshots/Install 2026-03-25.png)
-
----
-
 ### Version Verification
 
 Confirmed successful installation:
@@ -114,11 +108,11 @@ docling sample.pdf
 
 **Generated file:** `sample.md`
 
-![Default Conversion Command](screenshots/02-default-command.png)
+![Docling Installation Output](screenshots/screenshots/Install 2026-03-25.png)
 
 **Terminal output:**
 
-![Default Conversion Output](screenshots/03-default-output.png)
+![Default Conversion Output](screenshots/docling_sample.pdf_command_success_output.png)
 
 #### Observations
 
@@ -158,7 +152,7 @@ docling sample.pdf --to html --output output/
 
 **Generated file:** `output/sample.html`
 
-![HTML Conversion Command](screenshots/05-html-command.png)
+##![HTML Conversion Command](screenshots/05-html-command.png)
 
 **Terminal output:**
 
