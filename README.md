@@ -87,7 +87,7 @@ To effectively test Docling's capabilities, I selected a document with complex s
 - ✅ Tables with structured data
 - ✅ Images and graphics
 - ✅ Mixed content types
-- ✅ Multiple pages (5 pages)
+- ✅ Multiple pages (7 pages)
 
 **Source Document:**  
 [PyCon US 2026 Sponsorship Prospectus](https://events.linuxfoundation.org/wp-content/uploads/2026/03/sponsor_pytconf26_eu_030526.pdf)
