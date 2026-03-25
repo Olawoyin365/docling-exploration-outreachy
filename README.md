@@ -60,6 +60,8 @@ pip install docling
 
 ![Installed successfully](screenshots/Install 2026-03-25.png)
 
+---
+
 ### Version Verification
 
 Confirmed successful installation:
