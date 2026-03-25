@@ -156,15 +156,13 @@ docling sample.pdf --to html --output output/
 
 **Generated file:** `output/sample.html`
 
-![HTML Conversion Command](screenshots/05-html-command.png)
-
 **Terminal output:**
 
-![HTML Conversion Output](screenshots/06-html-output.png)
+![HTML Conversion Output](screenshots/html_convert_success_output.png)
 
 **HTML rendered in browser:**
 
-![HTML Browser View](screenshots/07-html-browser.png)
+![HTML Browser View](screenshots/rendered_result_after_converstiontohtml.png)
 
 #### Observations
 
@@ -203,9 +201,7 @@ docling sample.pdf --to md --no-ocr --output output/no_ocr/
 
 **Output:**
 
-![No OCR Command](screenshots/08-no-ocr-command.png)
-
-![No OCR Output](screenshots/09-no-ocr-output.png)
+![No OCR Output](screenshots/experiemnt_with_no_ocr.png)
 
 **Processing time:** ~8 seconds
 
@@ -217,9 +213,7 @@ docling sample.pdf --to md --ocr --output output/with_ocr/
 
 **Output:**
 
-![With OCR Command](screenshots/10-with-ocr-command.png)
-
-![With OCR Output](screenshots/11-with-ocr-output.png)
+![With OCR Output](screenshots/experiement_with_ocr.png)
 
 **Processing time:** ~25 seconds
 
@@ -272,11 +266,11 @@ docling sample.pdf --to html --output output/embedded/
 
 **Result:**
 
-![Embedded Images Command](screenshots/12-embedded-command.png)
+![Embedded Images Command](screenshots/experiement_with_embedded_output_html.png)
 
 **File size:** `sample.html` = 1.2 MB (with base64-encoded images)
 
-![Embedded Images Output](screenshots/13-embedded-output.png)
+![Embedded Images Output](screenshots/rendered_result_after_converstiontohtml.png)
 
 #### Experiment B: Referenced Images
 
@@ -298,7 +292,7 @@ output/referenced/
     └── image-3.png
 ```
 
-![Referenced Images Output](screenshots/15-referenced-output.png)
+![Referenced Images Output](screenshots/referenced_image_handling_for_experiment.png)
 
 ![Referenced Folder Structure](screenshots/16-referenced-folder.png)
 
@@ -341,15 +335,13 @@ docling sample.pdf --to md --pipeline standard --output output/standard/
 
 **Output:**
 
-![Standard Pipeline Command](screenshots/17-standard-command.png)
+![Standard Pipeline Command](screenshots/pipeline_standard_experimantation_output_command.png)
 
 **Processing time:** ~10 seconds
 
-![Standard Pipeline Output](screenshots/18-standard-output.png)
-
 **Sample output quality:**
 
-![Standard Pipeline Result](screenshots/19-standard-result.png)
+![Standard Pipeline Output](screenshots/pipeline_standard_experimantation_output_command.png)
 
 #### Experiment B: VLM Pipeline (Vision-Language Model)
 
@@ -372,15 +364,11 @@ Missing hf_xet optimization
 Windows symlink limitations (WinError 1314)
 ```
 
-**Sample output quality:**
-
-![VLM Pipeline Result](screenshots/22-vlm-result.png)
-
 #### Comparative Analysis
 
 | Aspect | Standard Pipeline | VLM Pipeline |
 |--------|-------------------|--------------|
-| **Speed** | ⚡ Fast (~10s) | 🐌 Very Slow (~45s) |
+| **Speed** | ⚡ Fast (~10s) | 🐌 Very Slow (~120m) |
 | **Model Loading** | None required | Downloads vision models |
 | **Output Quality** | Good for text | Better semantic understanding |
 | **Resource Usage** | Low CPU/RAM | High CPU/RAM/disk |
@@ -476,7 +464,7 @@ docling sample.pdf --format html
 Error: No such option: --format
 ```
 
-![Error Format Flag](screenshots/24-error-format.png)
+![Error Format Flag](screenshots/html_convert_error.png)
 
 **Root cause:**  
 Used incorrect flag name from other conversion tools
@@ -487,6 +475,9 @@ Consulted Docling help documentation:
 ```bash
 docling --help
 ```
+
+![Error Format Flag](screenshots/troubleshoot_html_issue.png)
+
 
 **Correct flag:** `--to` (not `--format`)
 
@@ -506,13 +497,11 @@ docling sample.pdf --to html
 WinError 1314: A required privilege is not held by the client
 ```
 
-![Error Symlink](screenshots/25-error-symlink.png)
-
 **Root cause:**  
 Windows requires administrator privileges for creating symbolic links  
 Docling tried to create symlinks for model caching
 
-**Impact:** Non-critical—Docling fell back to copying files instead
+**Impact:** Non-critical Docling fell back to copying files instead
 
 **Solution:** None required (fallback mechanism worked)
 
@@ -533,7 +522,7 @@ Docling tried to create symlinks for model caching
 RapidOCR returned empty result
 ```
 
-![Warning OCR](screenshots/26-warning-ocr.png)
+![Warning OCR](screenshots/experiement_with_ocr.png)
 
 **Root cause:**  
 Document has embedded searchable text (no image-based text to OCR)
