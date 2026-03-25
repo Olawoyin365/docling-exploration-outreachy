@@ -108,7 +108,7 @@ docling sample.pdf
 
 **Generated file:** `sample.md`
 
-![Docling Installation Output](screenshots/screenshots/Install_2026-03-25.png)
+![Docling Installation Output](screenshots/Install_2026-03-25.png)
 
 **Terminal output:**
 
