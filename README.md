@@ -290,10 +290,10 @@ docling sample.pdf --to html --image-export-mode referenced --output output/refe
 ```
 output/referenced/
 ├── sample.html (85 KB)
-└── sample/
-    ├── image-1.png
-    ├── image-2.png
-    └── image-3.png
+└── sample_artifacts/
+    ├── image_000000_a1ead109b32b4ef7a6283f6b1c7b9822c4ab63133f0ae52115767b45ac8cae19.png
+    ├── image_000001_a1ead109b32b4ef7a6283f6b1c7b9822c4ab63133f0ae52115767b45ac8cae19.png
+    └── image_000002_a1ead109b32b4ef7a6283f6b1c7b9822c4ab63133f0ae52115767b45ac8cae19.png
 ```
 
 ![Referenced Folder Structure](screenshots/16-referenced-folder.png)
