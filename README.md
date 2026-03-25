@@ -462,6 +462,8 @@ docling sample.pdf
 
 ```bash
 docling sample.pdf --format html
+docling convert sample.pdf --format html
+
 ```
 
 **Error output:**
