@@ -108,7 +108,7 @@ docling sample.pdf
 
 **Generated file:** `sample.md`
 
-![Docling Installation Output](screenshots/screenshots/Install 2026-03-25.png)
+![Docling Installation Output](screenshots/screenshots/Install_2026-03-25.png)
 
 **Terminal output:**
 
@@ -152,7 +152,7 @@ docling sample.pdf --to html --output output/
 
 **Generated file:** `output/sample.html`
 
-//![HTML Conversion Command](screenshots/05-html-command.png)
+![HTML Conversion Command](screenshots/05-html-command.png)
 
 **Terminal output:**
 
