@@ -56,6 +56,10 @@ Installed Docling using pip:
 pip install docling
 ```
 
+**Output:**
+
+![Installed successfully](screenshots/Install 2026-03-25.png)
+
 ### Version Verification
 
 Confirmed successful installation:
@@ -68,7 +72,7 @@ docling --version
 
 ![Docling Version](screenshots/01-version.png)
 
-**Installed Version:** docling 2.9.1
+**Installed Version:** docling 2.81.0
 
 ---
 
@@ -88,7 +92,7 @@ To effectively test Docling's capabilities, I selected a document with complex s
 **Saved locally as:** `sample.pdf`
 
 **Why this document?**  
-This brochure-style PDF contains the exact complexity mentioned in the task requirements: tables, multi-column layouts, and mixed content types—far more interesting than simple text-only documents.
+This brochure-style PDF contains the exact complexity mentioned in the task requirements: tables, multi-column layouts, and mixed content types, far more interesting than simple text-only documents.
 
 ---
 
