@@ -127,7 +127,7 @@ docling sample.pdf
 
 ✅ **Successful conversion** to Markdown format  
 ✅ **Preserved basic text flow** and document structure  
-✅ **Fast execution** (~10 seconds for 5-page PDF)  
+✅ **Fast execution** (~10 seconds for 7-page PDF)  
 ⚠️ **OCR warnings appeared** but did not block processing  
 ⚠️ **Table structure partially preserved** but simplified for Markdown  
 
