@@ -207,6 +207,8 @@ docling sample.pdf --to md --no-ocr --output output/no_ocr/
 **Output:**
 
 ![No OCR Output](screenshots/experiemnt_with_no_ocr.png)
+---
+![No OCR Output](screenshots/sample_md.png)
 
 **Processing time:** ~8 seconds
 
