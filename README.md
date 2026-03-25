@@ -298,6 +298,7 @@ output/referenced/
 
 ![Referenced Folder Structure](screenshots/16-referenced-folder.png)
 
+**Referenced Html rendered Output**
 
 ![Referenced Images Output](screenshots/referenced_image_handling_for_experiment.png)
 
