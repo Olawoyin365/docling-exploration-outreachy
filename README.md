@@ -56,6 +56,12 @@ Installed Docling using pip:
 pip install docling
 ```
 
+**Output**
+
+![Docling Installation Output](screenshots/Install_2026-03-25.png)
+
+---
+
 ### Version Verification
 
 Confirmed successful installation:
@@ -107,8 +113,6 @@ docling sample.pdf
 #### Output
 
 **Generated file:** `sample.md`
-
-![Docling Installation Output](screenshots/Install_2026-03-25.png)
 
 **Terminal output:**
 
