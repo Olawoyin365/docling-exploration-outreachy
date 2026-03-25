@@ -1,7 +1,8 @@
 # Docling Exploration: Document Processing Fundamentals for RAG Pipelines
 
 **Author:** Ibrahim Jamiu  
-**Email:** woyin365@gmail.com  
+**Email:** woyin365@gmail.com
+**Github** [Github](https://github.com/Olawoyin365/)
 **Program:** Outreachy Round 32 Internship (May 2026 Cohort)  
 **Project:** Develop a SLM/LLM using RamaLama RAG based off Fedora RPM Packaging Guidelines  
 **Date:** March 25, 2026  
@@ -32,7 +33,7 @@
 
 This document explores the fundamentals of document processing using **Docling CLI**, a critical component in preparing structured data for **Retrieval-Augmented Generation (RAG)** workflows. 
 
-Docling is utilized in RamaLama's RAG functionality to process documents and produce optimally chunked structured data for AI systems. While we may not directly use Docling in the Outreachy project implementation, understanding its capabilities provides essential insight into the RAG pipeline's preprocessing stage.
+Docling is utilized in RamaLama's RAG functionality to process documents and produce optimally chunked structured data for AI systems. This is to showcase and document my understanding and its capabilities and provide essential insight into the RAG pipeline's preprocessing stage.
 
 ### Objectives
 
@@ -800,9 +801,25 @@ docling sample.pdf --to md --pipeline vlm --output output/vlm/
 
 ---
 
+### AI Usage
+
+I used Claude (by Anthropic) as a support tool throughout this task, primarily to guide my exploration and debugging process.
+My approach was iterative and structured. I broke the task into smaller steps such as installation, command execution, output validation, and experimentation with different CLI options. After completing each step, I validated the output before proceeding. This made it easier to identify issues early, understand errors, and refine my approach incrementally.
+
+**Calude was particularly useful in:**
+- Interpreting CLI errors and logs
+- Understanding command options from documentation
+- Suggesting alternative approaches when commands failed
+- Copilot in crafting this README
+
+Importantly, all commands were executed, tested, and verified by me. The AI served as a guide to accelerate understanding, not as a substitute for hands-on experimentation.
+
+This workflow helped me maintain a clear structure, document my thought process effectively, and build a deeper understanding of how Docling behaves across different configurations.
+
+
 **Author:** Ibrahim Jamiu  
 **Contact:** woyin365@gmail.com | Matrix: @ibrahim-jam:fedora.im  
-**GitHub:** [Link to this repository]  
+**GitHub:** [https://github.com/Olawoyin365/]  
 **Outreachy Project:** Fedora RamaLama RAG Development  
 **Submission Date:** March 25, 2026
 
