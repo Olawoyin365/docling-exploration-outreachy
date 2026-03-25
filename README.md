@@ -340,15 +340,11 @@ Testing different processing pipelines to understand quality vs. performance tra
 docling sample.pdf --to md --pipeline standard --output output/standard/
 ```
 
-**Output:**
+**Sample Output quality:**
 
 ![Standard Pipeline Command](screenshots/pipeline_standard_experimantation_output_command.png)
 
 **Processing time:** ~10 seconds
-
-**Sample output quality:**
-
-![Standard Pipeline Output](screenshots/pipeline_standard_experimantation_output_command.png)
 
 #### Experiment B: VLM Pipeline (Vision-Language Model)
 
