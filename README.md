@@ -152,7 +152,7 @@ docling sample.pdf --to html --output output/
 
 **Generated file:** `output/sample.html`
 
-##![HTML Conversion Command](screenshots/05-html-command.png)
+//![HTML Conversion Command](screenshots/05-html-command.png)
 
 **Terminal output:**
 
