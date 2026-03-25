@@ -93,6 +93,10 @@ To effectively test Docling's capabilities, I selected a document with complex s
 
 **Saved locally as:** `sample.pdf`
 
+**Source Document Opened in its original state (PDF):**
+
+![Source Document Opened as PDF](screenshots/14-referenced-command.png)
+
 **Why this document?**  
 This brochure-style PDF contains the exact complexity mentioned in the task requirements: tables, multi-column layouts, and mixed content types, far more interesting than simple text-only documents.
 
@@ -278,10 +282,6 @@ docling sample.pdf --to html --output output/embedded/
 docling sample.pdf --to html --image-export-mode referenced --output output/referenced/
 ```
 
-**Result:**
-
-![Referenced Images Command](screenshots/14-referenced-command.png)
-
 **Output structure:**
 ```
 output/referenced/
@@ -292,9 +292,11 @@ output/referenced/
     └── image-3.png
 ```
 
+![Referenced Folder Structure](screenshots/16-referenced-folder.png)
+
+
 ![Referenced Images Output](screenshots/referenced_image_handling_for_experiment.png)
 
-![Referenced Folder Structure](screenshots/16-referenced-folder.png)
 
 #### Comparative Analysis
 
@@ -353,9 +355,7 @@ docling sample.pdf --to md --pipeline vlm --output output/vlm/
 
 ![VLM Pipeline Command](screenshots/20-vlm-command.png)
 
-**Processing time:** ~45 seconds (4.5x slower)
-
-![VLM Pipeline Output](screenshots/21-vlm-output.png)
+**Processing time:** ~120 minutes (10x slower)
 
 **Warnings observed:**
 
