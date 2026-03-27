@@ -83,11 +83,11 @@ docling --version
 
 To effectively test Docling's capabilities, I selected a document with complex structure containing:
 
-- ✅ Multi-column text layouts
-- ✅ Tables with structured data
-- ✅ Images and graphics
-- ✅ Mixed content types
-- ✅ Multiple pages (7 pages)
+-  Multi-column text layouts
+-  Tables with structured data
+-  Images and graphics
+-  Mixed content types
+-  Multiple pages (7 pages)
 
 **Source Document:**  
 [PyCon US 2026 Sponsorship Prospectus](https://events.linuxfoundation.org/wp-content/uploads/2026/03/sponsor_pytconf26_eu_030526.pdf)
@@ -137,11 +137,11 @@ docling sample.pdf
 
 #### Observations
 
-✅ **Successful conversion** to Markdown format  
-✅ **Preserved basic text flow** and document structure  
-✅ **Fast execution** (~10 seconds for 7-page PDF)  
-⚠️ **OCR warnings appeared** but did not block processing  
-⚠️ **Table structure partially preserved** but simplified for Markdown  
+ **Successful conversion** to Markdown format  
+ **Preserved basic text flow** and document structure  
+ **Fast execution** (~10 seconds for 7-page PDF)  
+ **OCR warnings appeared** but did not block processing  
+ **Table structure partially preserved** but simplified for Markdown  
 
 #### Analysis
 
@@ -179,12 +179,12 @@ docling sample.pdf --to html --output output/
 
 #### Observations
 
-✅ **Significantly better layout preservation** than Markdown  
-✅ **Tables rendered properly** with CSS styling  
-✅ **Images embedded successfully** using base64 encoding  
-✅ **Multi-column layouts maintained** visually  
-✅ **Directly viewable in browser** without additional processing  
-⚠️ **Larger file size** due to embedded images  
+ **Significantly better layout preservation** than Markdown  
+ **Tables rendered properly** with CSS styling  
+ **Images embedded successfully** using base64 encoding  
+ **Multi-column layouts maintained** visually  
+ **Directly viewable in browser** without additional processing  
+ **Larger file size** due to embedded images  
 
 #### Analysis
 
@@ -243,7 +243,7 @@ RapidOCR returned empty result
 
 | Aspect | Without OCR | With OCR |
 |--------|-------------|----------|
-| **Speed** | ⚡ Fast (~8s) | 🐌 Slower (~25s) |
+| **Speed** |  Fast (~8s) |  Slower (~25s) |
 | **Output Quality** | Clean, text-based | Some OCR artifacts |
 | **Use Case** | Digital PDFs with embedded text | Scanned documents, images |
 | **Resource Usage** | Minimal | Higher CPU/memory |
@@ -316,10 +316,10 @@ output/referenced/
 | Aspect | Embedded Mode | Referenced Mode |
 |--------|---------------|-----------------|
 | **File Size** | Large (1.2 MB) | Small (85 KB HTML) |
-| **Portability** | ✅ Single file | ❌ Requires folder |
-| **Browser Rendering** | ✅ Immediate | ✅ Requires relative paths |
-| **Storage Efficiency** | ❌ Redundant encoding | ✅ Separate image storage |
-| **Pipeline Integration** | ❌ Harder to extract images | ✅ Modular, reusable |
+| **Portability** | Single file |  Requires folder |
+| **Browser Rendering** |  Immediate |  Requires relative paths |
+| **Storage Efficiency** |  Redundant encoding |  Separate image storage |
+| **Pipeline Integration** |  Harder to extract images |  Modular, reusable |
 
 #### Key Insights
 
@@ -382,11 +382,11 @@ DELL@OLAWOYIN MINGW64 ~/Documents/docling-exploration-outreachy (main) $ docling
 
 | Aspect | Standard Pipeline | VLM Pipeline |
 |--------|-------------------|--------------|
-| **Speed** | ⚡ Fast (~10s) | 🐌 Very Slow (~120m) |
+| **Speed** |  Fast (~10s) |  Very Slow (~120m) |
 | **Model Loading** | None required | Downloads vision models |
 | **Output Quality** | Good for text | Better semantic understanding |
 | **Resource Usage** | Low CPU/RAM | High CPU/RAM/disk |
-| **Stability** | ✅ Reliable | ⚠️ Environment-dependent |
+| **Stability** |  Reliable |  Environment-dependent |
 | **Setup Complexity** | Simple | Requires model downloads |
 
 #### Key Insights
@@ -412,13 +412,13 @@ DELL@OLAWOYIN MINGW64 ~/Documents/docling-exploration-outreachy (main) $ docling
 
 For a production RAG system on **Fedora RPM Packaging Guidelines**:
 
-✅ **Use Standard Pipeline:**
+ **Use Standard Pipeline:**
 - Guidelines are text documents (no complex visuals)
 - Speed matters for processing large documentation sets
 - Deterministic output is preferred for consistency
 - Lower infrastructure costs
 
-❌ **Avoid VLM Pipeline (for this use case):**
+ **Avoid VLM Pipeline (for this use case):**
 - Overkill for text-only documents
 - Slower preprocessing delays RAG updates
 - Higher compute costs without benefit
@@ -600,14 +600,14 @@ Document has embedded searchable text (no image-based text to OCR)
 ### 4. Pipeline Trade-offs Are Significant
 
 **Standard pipeline:**
-- ⚡ 4.5x faster
-- ✅ Predictable output
-- ✅ Lower resource requirements
+-  4.5x faster
+-  Predictable output
+-  Lower resource requirements
 
 **VLM pipeline:**
-- 🔍 Better semantic understanding
-- 🐌 Significantly slower
-- 💾 Requires model downloads
+-  Better semantic understanding
+-  Significantly slower
+-  Requires model downloads
 
 **Decision matrix:**
 
@@ -654,16 +654,16 @@ Raw Documents → [Docling Processing] → Structured Data → Chunking → Embe
 ### Impact on RAG Quality
 
 **Poor preprocessing leads to:**
-- ❌ Inaccurate text extraction → Bad embeddings
-- ❌ Lost table structure → Incomplete context
-- ❌ Merged paragraphs → Poor chunk boundaries
-- ❌ Missing content → Gaps in knowledge base
+-  Inaccurate text extraction → Bad embeddings
+-  Lost table structure → Incomplete context
+-  Merged paragraphs → Poor chunk boundaries
+-  Missing content → Gaps in knowledge base
 
 **Quality preprocessing enables:**
-- ✅ Accurate semantic search
-- ✅ Contextually relevant chunks
-- ✅ Complete information retrieval
-- ✅ Better AI responses
+-  Accurate semantic search
+-  Contextually relevant chunks
+-  Complete information retrieval
+-  Better AI responses
 
 ### Application to Fedora RPM Guidelines RAG
 
@@ -699,11 +699,11 @@ This exploration demonstrates that **document processing is not a one-size-fits-
 
 ### Key Takeaways
 
-✅ **Docling is highly configurable** and supports diverse document types  
-✅ **Default settings are sensible** for most text documents  
-✅ **Performance and quality trade-offs exist** at every configuration choice  
-✅ **Systematic testing reveals optimal settings** for specific use cases  
-✅ **Error messages are informative** when read carefully  
+ **Docling is highly configurable** and supports diverse document types  
+ **Default settings are sensible** for most text documents  
+ **Performance and quality trade-offs exist** at every configuration choice  
+ **Systematic testing reveals optimal settings** for specific use cases  
+ **Error messages are informative** when read carefully  
 
 ### Skills Demonstrated
 
