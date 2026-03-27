@@ -123,6 +123,12 @@ docling sample.pdf
 
 ![Default Conversion Output](screenshots/docling_sample.pdf_command_success_output.png)
 
+---
+
+**Output in Markdown**
+![Markdown display sample](screenshots/sample_md.png)
+
+
 #### Observations
 
 ✅ **Successful conversion** to Markdown format  
