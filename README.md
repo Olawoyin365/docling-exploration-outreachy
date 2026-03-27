@@ -827,7 +827,7 @@ My approach was iterative and structured. I broke the task into smaller steps su
 - Suggesting alternative approaches when commands failed
 - Copilot in crafting this README
 
-Importantly, all commands were executed, tested, and verified by me. The AI served as a guide to accelerate understanding, not as a substitute for hands-on experimentation.
+Importantly, all commands were executed, tested, and verified by me. The AI served as a guide to accelerate understanding.
 
 This workflow helped me maintain a clear structure, document my thought process effectively, and build a deeper understanding of how Docling behaves across different configurations.
 
