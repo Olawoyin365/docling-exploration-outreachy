@@ -825,7 +825,7 @@ This workflow helped me maintain a clear structure, document my thought process 
 
 
 **Author:** Ibrahim Jamiu  
-**Contact:** woyin365@gmail.com | Matrix: @ibrahim-jam:fedora.im  
+**Contact:** woyin365@gmail.com | Matrix: @ibrahim-jam:matrix.org
 **GitHub:** [https://github.com/Olawoyin365/]  
 **Outreachy Project:** Fedora RamaLama RAG Development  
 **Submission Date:** March 25, 2026
