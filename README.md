@@ -125,6 +125,12 @@ docling sample.pdf
 
 ---
 
+**Sample Markdown file created Output:**
+
+![Markdown Output Preview](screenshots/04-markdown-preview.png)
+
+---
+
 **Output in Markdown**
 ![Markdown display sample](screenshots/sample_md.png)
 
@@ -136,10 +142,6 @@ docling sample.pdf
 ✅ **Fast execution** (~10 seconds for 7-page PDF)  
 ⚠️ **OCR warnings appeared** but did not block processing  
 ⚠️ **Table structure partially preserved** but simplified for Markdown  
-
-**Sample Markdown Output:**
-
-![Markdown Output Preview](screenshots/04-markdown-preview.png)
 
 #### Analysis
 
