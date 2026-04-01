@@ -3,6 +3,7 @@
 **Contributor:** Ibrahim Olawoyin  
 **Email:** woyin365@gmail.com
 **Github** [Github](https://github.com/Olawoyin365/)
+**Matrix:** @ibrahim-jam:matrix.org
 **Program:** Outreachy Round 32 Internship (May 2026 Cohort)  
 **Project:** Develop a SLM/LLM using RamaLama RAG based off Fedora RPM Packaging Guidelines  
 **Date:** March 25, 2026  
@@ -830,14 +831,6 @@ My approach was iterative and structured. I broke the task into smaller steps su
 Importantly, all commands were executed, tested, and verified by me. The AI served as a guide to accelerate understanding.
 
 This workflow helped me maintain a clear structure, document my thought process effectively, and build a deeper understanding of how Docling behaves across different configurations.
-
-
-**Author:** Ibrahim Jamiu  
-**Contact:** woyin365@gmail.com
-**Matrix:** @ibrahim-jam:matrix.org
-**GitHub:** [https://github.com/Olawoyin365/]  
-**Outreachy Project:** Fedora RamaLama RAG Development  
-**Submission Date:** March 25, 2026
 
 ---
 
