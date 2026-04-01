@@ -1,6 +1,6 @@
 # Docling Exploration: Document Processing Fundamentals for RAG Pipelines
 
-**Author:** Ibrahim Jamiu  
+**Contributor:** Ibrahim Olawoyin  
 **Email:** woyin365@gmail.com
 **Github** [Github](https://github.com/Olawoyin365/)
 **Program:** Outreachy Round 32 Internship (May 2026 Cohort)  
