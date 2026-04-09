@@ -527,7 +527,7 @@ Below is a snippet from `sample.json` showing how Docling groups related items (
 
 ### 8. The Fedora Domain Blueprint
 
-Applying these findings specifically to the **Fedora RPM Packaging Guidelines** project reveals a clear strategy for the RAG implementation.
+Applying these findings specifically to the **Fedora RPM Packaging Guidelines**
 
 #### Mapping Tooling to Domain Requirements
 
