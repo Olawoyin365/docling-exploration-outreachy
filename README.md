@@ -23,6 +23,8 @@
   - [4. Image Export Modes](#4-image-export-modes)
   - [5. Pipeline Comparison](#5-pipeline-comparison)
 - [6. Structured Format Export & Data Density](#6-structured-format-export--data-density)
+- [7. Hybrid Chunking & Semantic Hierarchy](#7-hybrid-chunking--semantic-hierarchy)
+- [8. The Fedora Domain Blueprint](#8-the-fedora-domain-blueprint)
 - [Errors Encountered & Solutions](#errors-encountered--solutions)
 - [Key Findings](#key-findings)
 - [Relevance to RAG Systems](#relevance-to-rag-systems)
@@ -489,6 +491,55 @@ DocTags represents the most efficient format for maintaining document structure 
 The JSON export is the only format that allows an AI system to "reconstruct" the document's spatial hierarchy. When querying complex Fedora Packaging Guidelines, the JSON schema allows the retrieval engine to identify not just the text, but whether that text was part of a sidebar, a footnote, or a primary instruction block.
 
 **Verdict:** For high-volume documentation sets like Fedora guidelines, DocTags provides the best balance of structure and token efficiency. For "Zero-Failure" corporate knowledge bases, JSON is the gold standard despite the storage cost.
+
+---
+
+### 7. Hybrid Chunking & Semantic Hierarchy
+
+In a RAG pipeline, "Chunking" is the process of splitting a long document into smaller, meaningful segments for embedding. Traditional methods split text by character count or regex, which often breaks a sentence or a table in the middle.
+
+Docling enables **Semantic Hierarchy Chunking** by exporting the document tree.
+
+#### Structural Breakdown (JSON Snippet)
+
+Below is a snippet from `sample.json` showing how Docling groups related items (like a list) into a logical hierarchy:
+
+```json
+"groups": [
+  {
+    "self_ref": "#/groups/0",
+    "parent": { "$ref": "#/body" },
+    "children": [
+      { "$ref": "#/texts/76" },
+      { "$ref": "#/texts/77" }
+    ],
+    "name": "list",
+    "label": "list"
+  }
+]
+```
+
+#### Why This Is Important:
+1. **Context Preservation:** By knowing that `texts/76` and `texts/77` are children of a `list` group, a RAG chunker can ensure they are kept together in the same vector, preventing the "Lost in the Middle" problem during retrieval.
+2. **Page Splitting Logic:** Unlike raw text, Docling metadata includes `page_no` and `bbox` (bounding box) coordinates. If a table spans two pages, Docling's structural JSON allows the pipeline to reconstruct the table before chunking, ensuring the LLM sees the complete data.
+
+---
+
+### 8. The Fedora Domain Blueprint
+
+Applying these findings specifically to the **Fedora RPM Packaging Guidelines** project reveals a clear strategy for the RAG implementation.
+
+#### Mapping Tooling to Domain Requirements
+
+| Fedora Guideline Feature | Docling Strategy | RAG Benefit |
+|--------------------------|------------------|-------------|
+| **Versioned Headers** | `section_header` (Level 1-3) | Allows for "Section-Aware" filtering (e.g., only searching F40 guidelines). |
+| **Spec File Examples** | Code blocks in Markdown | Preserves indentation and syntax, critical for accurate retrieval of packaging scripts. |
+| **Legal/License Tables** | Precision Table Extraction | Ensures complex licensing requirement tables are interpreted as structured data, not flat text. |
+| **Change Logs** | DocTags Export | Keeps chronologically dense data lightweight while maintaining timestamp entries as distinct metadata points. |
+
+#### Architectural Recommendation
+For the Fedora guidelines RAG system, the optimal ingestion pipeline should utilize **Referenced Image Mode** and **Standard Pipeline** with a fallback to **DocTags** for high-volume indexing. This ensures that the spec file examples (the most frequent query target) are preserved with perfect fidelity while keeping the metadata overhead manageable for the vector store.
 
 ---
 
