@@ -22,17 +22,18 @@
   - [3. OCR Comparison](#3-ocr-comparison)
   - [4. Image Export Modes](#4-image-export-modes)
   - [5. Pipeline Comparison](#5-pipeline-comparison)
-- [6. Structured Format Export & Data Density](#6-structured-format-export--data-density)
-- [7. Hybrid Chunking & Semantic Hierarchy](#7-hybrid-chunking--semantic-hierarchy)
-- [8. The Fedora Domain Blueprint](#8-the-fedora-domain-blueprint)
-- [Errors Encountered & Solutions](#errors-encountered--solutions)
-- [Key Findings](#key-findings)
-- [Relevance to RAG Systems](#relevance-to-rag-systems)
-- [Conclusion](#conclusion)
-- [Repository Structure](#repository-structure)
+- [6. The Danger Zone: Silent Failures in Table Extraction](#6-the-danger-zone-silent-failures-in-table-extraction)
+- [7. Structured Format Export & Data Density](#7-structured-format-export--data-density)
+- [8. Hybrid Chunking & Semantic Hierarchy](#8-hybrid-chunking--semantic-hierarchy)
+- [9. The Fedora Domain Blueprint](#9-the-fedora-domain-blueprint)
+- [10. Errors Encountered & Solutions](#10-errors-encountered--solutions)
+- [11. Key Findings](#11-key-findings)
+- [12. Relevance to RAG Systems](#12-relevance-to-rag-systems)
+- [13. Conclusion](#13-conclusion)
+- [14. Repository Structure](#14-repository-structure)
 
 ---
-
+DELL@OLAWOYIN MINGW64 ~/Documents/docling-exploration-outreachy (main)
 ## Introduction
 
 This document explores the fundamentals of document processing using **Docling CLI**, a critical component in preparing structured data for **Retrieval-Augmented Generation (RAG)** workflows. 
@@ -434,9 +435,32 @@ For a production RAG system on **Fedora RPM Packaging Guidelines**:
 
 **Verdict:** Pipeline selection must match document type and performance requirements. For text-based guidelines, standard pipeline is optimal.
 
+#### Resource Ceilings: RAM Management & Scaling
+As discovered during high-volume testing of 4MB+ PDFs, certain output formats (especially JSON and HTML) can trigger **`std::bad_alloc` (Memory Allocation)** errors on systems with limited RAM. While the VLM pipeline is 10x slower, it is the standard pipeline's handling of extremely dense metadata that often hits the hardware ceiling. For production RAG scaling, monitoring RAM usage is as critical as monitoring processing time.
+
 ---
 
-### 6. Structured Format Export & Data Density
+### 6. The Danger Zone: Silent Failures in Table Extraction
+
+One of the most critical findings in this exploration is the behavior of the `--table-mode` flag. While speed is often a priority, the `fast` mode can lead to "Silent Failures" that are devastating to a RAG pipeline.
+
+#### Command: Fast Table Mode
+```bash
+docling sample.pdf --table-mode fast --output output/table-fast/
+```
+
+#### The "Silent Failure" Nuance:
+Unlike a crash (like `bad_alloc`), using `--table-mode fast` on complex sponsorship tables often succeeds without an error message, but produces a **structurally corrupted** output. This includes:
+- **Merged Rows:** Two distinct pricing tiers merged into a single Markdown row.
+- **Split Columns:** A single data point split across the table boundary.
+
+**Impact on RAG:** Since there is no error thrown, the RAG system will ingest this corrupted data into the vector store as "fact." This leads to the LLM giving confident but wrong answers about sponsorship costs or requirements.
+
+**Recommendation:** Always use the default (Accurate) table mode for knowledge-dense technical documentation like the Fedora Guidelines.
+
+---
+
+### 7. Structured Format Export & Data Density
 
 Modern AI pipelines often require more than just raw text. To evaluate Docling's suitability for programmable RAG ingestion, I tested specialized structural formats designed for machine readability rather than human consumption.
 
@@ -494,7 +518,7 @@ The JSON export is the only format that allows an AI system to "reconstruct" the
 
 ---
 
-### 7. Hybrid Chunking & Semantic Hierarchy
+### 8. Hybrid Chunking & Semantic Hierarchy
 
 In a RAG pipeline, "Chunking" is the process of splitting a long document into smaller, meaningful segments for embedding. Traditional methods split text by character count or regex, which often breaks a sentence or a table in the middle.
 
@@ -525,7 +549,7 @@ Below is a snippet from `sample.json` showing how Docling groups related items (
 
 ---
 
-### 8. The Fedora Domain Blueprint
+### 9. The Fedora Domain Blueprint
 
 Applying these findings specifically to the **Fedora RPM Packaging Guidelines**
 
@@ -543,7 +567,7 @@ For the Fedora guidelines RAG system, the optimal ingestion pipeline should util
 
 ---
 
-## Errors Encountered & Solutions
+## 10. Errors Encountered & Solutions
 
 ### Error 1: Incorrect Command Syntax
 
@@ -665,7 +689,7 @@ Document has embedded searchable text (no image-based text to OCR)
 
 ---
 
-## Key Findings
+## 11. Key Findings
 
 ### 1. Output Format Selection Matters
 
@@ -755,7 +779,7 @@ The experiment comparing Text (26 KB) and JSON (6.7 MB) highlights a critical tr
 
 ---
 
-## Relevance to RAG Systems
+## 12. Relevance to RAG Systems
 
 ### Why Document Processing Matters for RAG
 
@@ -811,7 +835,7 @@ docling guideline.pdf --to md --pipeline standard --no-ocr
 
 ---
 
-## Conclusion
+## 13. Conclusion
 
 This exploration demonstrates that **document processing is not a one-size-fits-all** operation. Effective preprocessing requires:
 
@@ -861,7 +885,7 @@ The experiments conducted here provide a decision framework for configuring docu
 
 ---
 
-## Repository Structure
+## 14. Repository Structure
 
 ```
 docling-exploration-outreachy/
