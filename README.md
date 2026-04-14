@@ -22,7 +22,7 @@
   - [3. OCR Comparison](#3-ocr-comparison)
   - [4. Image Export Modes](#4-image-export-modes)
   - [5. Pipeline Comparison](#5-pipeline-comparison)
-- [6. The Danger Zone: Silent Failures in Table Extraction](#6-the-danger-zone-silent-failures-in-table-extraction)
+- [6. Data Integrity: Understanding Silent Errors in Table Extraction](#6-data-integrity-understanding-silent-errors-in-table-extraction)
 - [7. Structured Format Export & Data Density](#7-structured-format-export--data-density)
 - [8. Hybrid Chunking & Semantic Hierarchy](#8-hybrid-chunking--semantic-hierarchy)
 - [9. The Fedora Domain Blueprint](#9-the-fedora-domain-blueprint)
@@ -440,7 +440,7 @@ As discovered during high-volume testing of 4MB+ PDFs, certain output formats (e
 
 ---
 
-### 6. The Danger Zone: Silent Failures in Table Extraction
+### 6. Data Integrity: Understanding Silent Errors in Table Extraction
 
 One of the most critical findings in this exploration is the behavior of the `--table-mode` flag. While speed is often a priority, the `fast` mode can lead to "Silent Failures" that are devastating to a RAG pipeline.
 
